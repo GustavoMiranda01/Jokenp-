@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./jokenpo.css">
+    <link rel="stylesheet" href="./style.css">
+    <link href="assets/img/favicon.png" rel="icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <title>Jokenpô-Mario-Bros</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Jokenpô</h1>
+        <h2>Mario Bros</h2>
+
+        <div class="buttons">
+            <button class="rock" id="rock" onclick="playHuman('rock')">&#x1F44A;</button>
+            <button class="paper" id="paper" onclick="playHuman('paper')">&#x1F590;</button>
+            <button class="scissors" id="scissors" onclick="playHuman('scissors')">&#x270c;</button>
+        </div>
+
+        <div id="image-container"></div>
+
+        <p class="result"></p>
+
+        <p class="your-score"><b>Sua Pontuação:</b><span id="human-score">0</span></p>
+        <p class="machine-score"><b>Pontuação do Mario:</b><span id="machine-score">0</span></p>
+
+
+    </div>
+
+</body>
+<script src="./script.js"></script>
+
+</html>
