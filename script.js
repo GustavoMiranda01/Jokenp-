@@ -1,5 +1,6 @@
 
 
+
 const result = document.querySelector('.result');
 const humanScore = document.querySelector('#human-score');
 const machineScore = document.querySelector('#machine-score');
@@ -7,7 +8,6 @@ const imageContainer = document.querySelector('#image-container');
 
 let humanScoreNumber = 0;
 let machineScoreNumber = 0;
-let currentImage = null;
 
 const playHuman = (humanChoice) => {
   playTheGame(humanChoice, playMachine());
@@ -25,9 +25,9 @@ const playMachine = () => {
 const playTheGame = (human, machine) => {
   console.log('Humano: ' + human + ' Maquina: ' + machine);
 
-  if (currentImage) {
-    imageContainer.removeChild(currentImage);
-    currentImage = null;
+  const existingImage = imageContainer.querySelector('img');
+  if (existingImage) {
+    imageContainer.removeChild(existingImage);
   }
 
   if (human === machine) {
@@ -37,7 +37,6 @@ const playTheGame = (human, machine) => {
     image.style.width = '100px';
     image.style.height = '100px';
     imageContainer.appendChild(image);
-    currentImage = image;
   } else if (
     (human === 'paper' && machine === 'rock') ||
     (human === 'rock' && machine === 'scissors') ||
@@ -51,7 +50,6 @@ const playTheGame = (human, machine) => {
     image.style.width = '100px';
     image.style.height = '100px';
     imageContainer.appendChild(image);
-    currentImage = image;
   } else {
     machineScoreNumber++;
     machineScore.innerHTML = machineScoreNumber;
@@ -61,6 +59,5 @@ const playTheGame = (human, machine) => {
     image.style.width = '70px';
     image.style.height = '90px';
     imageContainer.appendChild(image);
-    currentImage = image;
   }
 };
